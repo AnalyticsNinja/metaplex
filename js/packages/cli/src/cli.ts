@@ -186,7 +186,7 @@ program
         }
 
         if (!link) {
-          const instructions = [
+          /*const instructions = [
             anchor.web3.SystemProgram.transfer({
               fromPubkey: walletKeyPair.publicKey,
               toPubkey: PAYMENT_WALLET,
@@ -212,9 +212,9 @@ program
             filename: `image.png`,
             contentType: 'image/png',
           });
-          data.append('file[]', manifestBuffer, 'metadata.json');
+          data.append('file[]', manifestBuffer, 'metadata.json');*/
           try {
-            const result = await upload(data, manifest, index);
+            /*const result = await upload(data, manifest, index);
 
             const metadataFile = result.messages?.find(
               m => m.filename === 'manifest.json',
@@ -223,7 +223,8 @@ program
               link = `https://arweave.net/${metadataFile.transactionId}`;
               console.log(`File uploaded: ${link}`);
             }
-            console.log('setting cache for ', index);
+            console.log('setting cache for ', index);*/
+            link = 'https://rarewojak.s3.amazonaws.com/'+ index + "/" + index + ".json";
             cacheContent.items[index] = {
               link,
               name: manifest.name,
